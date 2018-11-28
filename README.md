@@ -70,4 +70,5 @@ see how abstract you can get. Fortunately, there are several parameters you can 
     
     `python3 src/run.py --style='/Users/Max/Desktop/style.jpg' --content='/Users/Max/Desktop/content.jpg' --save_path='/Users/Max/Desktop/output.jpg' --size=512 --alpha=0.001 --afactor=5`
     
-All this can lead to some wonderfully interesting results, hope you enjoy it as much as I do and please share any issues but also interesting results!
+All this can lead to some wonderfully interesting results, anyone interested in reading the paper you can find it here https://arxiv.org/abs/1508.06576. 
+Hope you enjoy it as much as I do and please share any issues but also interesting results!
