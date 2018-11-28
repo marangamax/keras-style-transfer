@@ -3,3 +3,5 @@
 all_pics/*
 output/*
 pics/*
+.idea
+*.ipynb
