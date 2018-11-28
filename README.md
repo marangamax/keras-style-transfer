@@ -10,6 +10,33 @@ this should be changed. It follows that I created this so the artists, creative 
 looking to pimp their selfies can also try it out.. and feel like hackers at the same. 
 
 
+Installation Procedure
+---------------
+I'm an OSX user so unfortunately this will not work for Windows (Linux should be fine). Don't let this scare you away, it won't take more than 10 minutes.
+1. Open up Terminal
+2. Check that you have python3 installed:
+
+    `python3 --version`
+    
+If the output is something like '3.x.x', continue to the next step. If 'command not found', follow the instructions at this page https://wsvincent.com/install-python3-mac/.
+
+3.  Next write the following command to install this repository to your Desktop (or anywhere else if you know what your doing):
+
+    `cd Desktop`
+    
+    then
+    
+    `git clone https://github.com/marangamax/keras-style-transfer`
+    
+4. Almost there, now we just have to install the dependencies and your ready to go:
+
+    `cd keras-style-transfer`
+    
+    then 
+    
+    `pip3 install -r requirements`
+    
+
 How to use
 ---------------
 1. Choose a content image and a style image and put them somewhere on your computer and remember the path to each file.
@@ -44,32 +71,3 @@ see how abstract you can get. Fortunately, there are several parameters you can 
     `python3 src/run.py --style='/Users/Max/Desktop/style.jpg' --content='/Users/Max/Desktop/content.jpg' --save_path='/Users/Max/Desktop/output.jpg' --size=512 --alpha=0.001 --afactor=5`
     
 All this can lead to some wonderfully interesting results, hope you enjoy it as much as I do and please share any issues but also interesting results!
-    
-[[https://github.com/marangamax/keras-style-transfer/blob/master/example.png|alt=example]]
-
-
-Non-Coder Installation Procedure
----------------
-I'm an OSX user so unfortunately this will not work for Windows (Linux should be fine). Don't let this scare you away, it won't take more than 10 minutes.
-1. Open up Terminal
-2. Check that you have python3 installed:
-
-    `python3 --version`
-    
-If the output is something like '3.x.x', continue to the next step. If 'command not found', follow the instructions at this page https://wsvincent.com/install-python3-mac/.
-
-3.  Next write the following command to install this repository to your Desktop (or anywhere else if you know what your doing):
-
-    `cd Desktop`
-    
-    then
-    
-    `git clone https://github.com/marangamax/keras-style-transfer`
-    
-4. Almost there, now we just have to install the dependencies and your ready to go:
-
-    `cd keras-style-transfer`
-    
-    then 
-    
-    `pip3 install -r requirements`
