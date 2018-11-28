@@ -39,6 +39,7 @@ def run(style_image=None,
     assert save_path != None, 'You forgot to pass a save path.'
     assert style_image != None, 'You forgot to pass a style image.'
     assert content_image != None, 'You forgot to pass a content image.'
+    assert height == width, 'Height and width must be equal'
 
     # load and pre-process images
     content_image = preprocess(image=content_image, height=height, width=width)
@@ -89,19 +90,29 @@ def run(style_image=None,
 
 
 def parse_args():
-    ap = ArgumentParser()
-    return
+    ap = ArgumentParser(description='Perform style transfer on any two images')
+    ap.add_argument('--style', type=str, help='Path to style image')
+    ap.add_argument('--content', type=str, help='Path to content image')
+    ap.add_argument('--save_path', type=str, default='$HOME', help='Where do you want to save the output?')
+    ap.add_argument('--size', type=int, default=256, help='Image height and width (output is always square)')
+    ap.add_argument('--iter', type=int, default=10, help='Number of iterations')
+    ap.add_argument('--alpha', type=float, default=0.01, help='The ratio of content to style, default is 1e-2.'
+                                                              'Increase for more content, decrease for more style.')
+    ap.add_argument('--afactor', type=int, default=4,
+                    help='Abstract factor. How abstract do you want your image to be?')
+    return ap.parse_args()
 
 if __name__ == '__main__':
-    style_image = load_image('/Users/max_dojo/repos/keras-style-transfer/pics/andyrementer-1_o.jpg')
-    content_image = load_image('/Users/max_dojo/repos/keras-style-transfer/pics/kufic.jpg')
-
+    args = parse_args()
+    style_image = load_image(args.style)
+    content_image = load_image(args.content)
     run(style_image=style_image,
         content_image=content_image,
-        save_path='/Users/max_dojo/Desktop/test.png',
-        height=256,
-        width=256,
-        iterations=1,
-        content_weight=0.01,
-        style_weight=5.0,
-        total_variation_weight=1.0)
+        save_path=args.save_path,
+        height=args.size,
+        width=args.size,
+        iterations=args.iter,
+        content_weight=args.alpha,
+        style_weight=1.0,
+        total_variation_weight=0.2,
+        abstract_factor=args.afactor)

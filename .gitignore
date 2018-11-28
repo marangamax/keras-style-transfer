@@ -5,3 +5,4 @@ output/*
 pics/*
 .idea
 *.ipynb
+src/__pycache__/*
