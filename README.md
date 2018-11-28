@@ -28,8 +28,24 @@ How to use
     
 It is normal that this takes some time on a MacBook, usually ~15 minutes depending on the size of your CPU.
 
-4. At this point,
+4. So now you've run the machine using your images, but maybe they're not exactly what you expected and you want to adjust them. Maybe you want to see more content or style, or you just want to 
+see how abstract you can get. Fortunately, there are several parameters you can pass to the command:
 
+    `--size is the image size, default is 256. At the moment the maximum I can get to is 1024 with a 16 GB CPU`
+    
+    `--iter is the number of iterations, default is 10. Increasing this will basically let your machine go further down into the rabbit hole of abstraction. After 20 there's not much noticeable difference`
+    
+    `--alpha is the ratio of the content to the style image, default is 0.01. Increase this for more content, decrease this for more style`
+    
+    `--afactor is the abstraction factor, default is 3. This values ranges from 1 to 5, where 5 is the most abstract`
+    
+    So using this, let's tune my example command a bit more:
+    
+    `python3 src/run.py --style='/Users/Max/Desktop/style.jpg' --content='/Users/Max/Desktop/content.jpg' --save_path='/Users/Max/Desktop/output.jpg' --size=512 --alpha=0.001 --afactor=5`
+    
+All this can lead to some wonderfully interesting results, hope you enjoy it as much as I do and please share any issues but also interesting results!
+    
+[[https://github.com/marangamax/keras-style-transfer/blob/master/example.png|alt=example]]
 
 
 Non-Coder Installation Procedure
@@ -41,6 +57,7 @@ I'm an OSX user so unfortunately this will not work for Windows (Linux should be
     `python3 --version`
     
 If the output is something like '3.x.x', continue to the next step. If 'command not found', follow the instructions at this page https://wsvincent.com/install-python3-mac/.
+
 3.  Next write the following command to install this repository to your Desktop (or anywhere else if you know what your doing):
 
     `cd Desktop`

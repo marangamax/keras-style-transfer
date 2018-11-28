@@ -98,7 +98,7 @@ def parse_args():
     ap.add_argument('--iter', type=int, default=10, help='Number of iterations')
     ap.add_argument('--alpha', type=float, default=0.01, help='The ratio of content to style, default is 1e-2.'
                                                               'Increase for more content, decrease for more style.')
-    ap.add_argument('--afactor', type=int, default=4,
+    ap.add_argument('--afactor', type=int, default=3,
                     help='Abstract factor. How abstract do you want your image to be?')
     return ap.parse_args()
 
